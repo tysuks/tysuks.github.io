@@ -1,1 +1,24 @@
-
+{
+    "Gamemode.cs":  24,
+    "Overpowered.cs":  169,
+    "PlayerJoin.cs":  24,
+    "ShaderFix.cs":  16,
+    "Player.cs":  230,
+    "Projectiles.cs":  80,
+    "Menu.cs":  1078,
+    "PluginInfo.cs":  12,
+    "Library.cs":  171,
+    "Global.cs":  73,
+    "RpcKickDetector.cs":  21,
+    "Gunlib.cs":  282,
+    "ExtrasLib.cs":  350,
+    "PlayerLeave.cs":  24,
+    "Movement.cs":  1689,
+    "PhotonTimePatch.cs":  24,
+    "Master.cs":  109,
+    "Visuals.cs":  881,
+    "RigPatches.cs":  29,
+    "Plugin.cs":  221,
+    "PCMenu.cs":  435,
+    "HarmonyPatches.cs":  41
+}

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Breeze</title>
-  <link rel="icon" type="image/png" href="breezelogo.png" />
+  <title>Ty's Modding Server</title>
+  <link rel="icon" type="image/png" href="twinkmoddingserver.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -25,7 +25,7 @@
     header { position:sticky; top:0; z-index:10; background:rgba(11,13,20,.8); backdrop-filter:blur(12px); border-bottom:1px solid var(--border); }
     nav { display:flex; align-items:center; justify-content:space-between; height:64px; }
     .brand { display:flex; align-items:center; gap:10px; font-weight:800; font-size:18px; }
-    .brand img { width:26px; height:26px; border-radius:6px; }
+    .brand img { width:26px; height:26px; border-radius:6px; object-fit:cover; }
     .nav-links { display:flex; gap:24px; list-style:none; }
     .nav-links a { color:var(--muted); font-size:14px; font-weight:500; transition:color .2s; }
     .nav-links a:hover { color:var(--text); }
@@ -35,28 +35,14 @@
 
     /* HERO */
     .hero { padding:96px 0 72px; text-align:center; }
-    .hero-logo { display:block; width:84px; height:84px; border-radius:20px; margin:0 auto 24px; box-shadow:0 0 0 8px var(--accent-soft); }
-    .badge { display:inline-flex; align-items:center; gap:8px; margin-bottom:20px; padding:6px 14px; border-radius:999px; background:var(--accent-soft); color:var(--accent); font-size:13px; font-weight:600; }
-    .badge .dot { width:7px; height:7px; border-radius:50%; background:var(--accent); }
+    .hero-logo { display:block; width:92px; height:92px; border-radius:22px; margin:0 auto 24px; object-fit:cover; box-shadow:0 0 0 8px var(--accent-soft); }
     .hero h1 { font-size:clamp(36px,6vw,56px); font-weight:800; letter-spacing:-1px; line-height:1.1; }
     .hero h1 span { background:linear-gradient(135deg,#fff, #7c8cff); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
-    .hero p { margin:20px auto 32px; max-width:560px; color:var(--muted); font-size:17px; }
+    .hero p { margin:20px auto 32px; max-width:600px; color:var(--muted); font-size:17px; }
     .hero-actions { display:flex; gap:12px; justify-content:center; flex-wrap:wrap; }
 
-    /* STATS */
-    .stats { padding:48px 24px; }
-    .stats-summary { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin-bottom:32px; }
-    .stat { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px 28px; text-align:center; min-width:150px; }
-    .stat .num { font-size:34px; font-weight:800; letter-spacing:-.5px; color:var(--accent); }
-    .stat .lbl { color:var(--muted); font-size:13px; margin-top:4px; }
-    .file-list { max-width:640px; margin:0 auto; display:flex; flex-direction:column; gap:8px; }
-    .file { display:flex; align-items:center; justify-content:space-between; gap:16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 16px; font-size:14px; }
-    .file .name { font-weight:600; word-break:break-all; }
-    .file .name small { color:var(--muted); font-weight:400; }
-    .file .lines { color:var(--accent); font-weight:700; background:var(--accent-soft); padding:4px 10px; border-radius:8px; white-space:nowrap; }
-
-    /* FEATURES */
-    .features { padding:72px 0; }
+    /* SECTIONS */
+    section { padding:72px 0; }
     .section-head { text-align:center; margin-bottom:44px; }
     .section-head h2 { font-size:30px; font-weight:800; letter-spacing:-.5px; }
     .section-head p { color:var(--muted); margin-top:8px; }
@@ -66,6 +52,21 @@
     .feature .icon { font-size:28px; margin-bottom:14px; }
     .feature h3 { font-size:18px; font-weight:700; margin-bottom:6px; }
     .feature p { color:var(--muted); font-size:14px; }
+
+    /* BREEZE SUBSECTION */
+    .breeze-section { background:linear-gradient(180deg,transparent,var(--accent-soft)); border-top:1px solid var(--border); }
+    .breeze-head { display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:8px; }
+    .breeze-head img { width:44px; height:44px; border-radius:12px; object-fit:cover; }
+    .breeze-tag { display:inline-block; margin:0 auto 8px; color:var(--accent); font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; }
+
+    .stats-summary { display:flex; justify-content:center; gap:16px; flex-wrap:wrap; margin:32px 0; }
+    .stat { background:var(--surface); border:1px solid var(--border); border-radius:14px; padding:24px 28px; text-align:center; min-width:150px; }
+    .stat .num { font-size:34px; font-weight:800; letter-spacing:-.5px; color:var(--accent); }
+    .stat .lbl { color:var(--muted); font-size:13px; margin-top:4px; }
+    .file-list { max-width:640px; margin:0 auto; display:flex; flex-direction:column; gap:8px; }
+    .file { display:flex; align-items:center; justify-content:space-between; gap:12px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:12px 16px; font-size:14px; }
+    .file .name { font-weight:600; word-break:break-all; }
+    .file .lines { color:var(--accent); font-weight:700; background:var(--accent-soft); padding:4px 10px; border-radius:8px; white-space:nowrap; }
 
     /* FOOTER */
     footer { border-top:1px solid var(--border); padding:32px 0; text-align:center; color:var(--muted); font-size:13px; }
@@ -79,53 +80,59 @@
 <body>
   <header>
     <nav class="wrap">
-      <div class="brand"><img src="breezelogo.png" alt="" />Breeze</div>
+      <div class="brand"><img src="twinkmoddingserver.png" alt="" />Ty's Modding Server</div>
       <ul class="nav-links">
-        <li><a href="#features">Features</a></li>
-        <li><a href="#stats">Stats</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#breeze">Breeze</a></li>
       </ul>
-      <a href="https://discord.gg/breeze" target="_blank" class="btn">Get Breeze</a>
+      <a href="https://discord.gg/tysmodding" target="_blank" class="btn">Join Server</a>
     </nav>
   </header>
 
   <section class="hero wrap">
-    <img class="hero-logo" src="breezelogo.png" alt="Breeze" />
-    <div class="badge"><span class="dot"></span>Now available</div>
-    <h1>A cleaner way to <span>mod.</span></h1>
-    <p>Breeze is a minimal, modern mod menu with instant toggles, a smooth interface, and everything you need in one lightweight package.</p>
+    <img class="hero-logo" src="twinkmoddingserver.png" alt="Ty's Modding Server" />
+    <h1>Ty's <span>Modding Server</span></h1>
+    <p>The hub for Gorilla Tag modding. Tools, menus, updates, and a community that builds together — all in one place.</p>
     <div class="hero-actions">
-      <a href="https://discord.gg/breeze" target="_blank" class="btn">Download</a>
-      <a href="#stats" class="btn btn-ghost">File Stats</a>
+      <a href="https://discord.gg/tysmodding" target="_blank" class="btn">Join the Server</a>
+      <a href="#breeze" class="btn btn-ghost">Check out Breeze</a>
     </div>
   </section>
 
-  <section class="stats" id="stats">
-    <div class="stats-summary" id="statSummary">
-      <div class="stat"><div class="num">–</div><div class="lbl">Files</div></div>
-      <div class="stat"><div class="num">–</div><div class="lbl">Total lines</div></div>
-      <div class="stat"><div class="num">–</div><div class="lbl">Largest file</div></div>
-    </div>
-    <div class="file-list" id="fileList"></div>
-  </section>
-
-  <section class="features wrap" id="features">
+  <section class="wrap" id="about">
     <div class="section-head">
-      <h2>Why Breeze?</h2>
-      <p>Everything you need, nothing you don't.</p>
+      <h2>What we do</h2>
+      <p>A modding community focused on tools that just work.</p>
     </div>
     <div class="features-grid">
-      <div class="feature"><div class="icon">⚡</div><h3>Instant toggles</h3><p>Every mod switches on and off immediately, with zero lag.</p></div>
-      <div class="feature"><div class="icon">🎨</div><h3>Minimal UI</h3><p>A clean, modern interface that stays out of your way.</p></div>
-      <div class="feature"><div class="icon">🚀</div><h3>Fast updates</h3><p>Regular releases with new mods and fixes.</p></div>
+      <div class="feature"><div class="icon">🛠️</div><h3>Modding tools</h3><p>Guides, managers, and everything you need to get started modding.</p></div>
+      <div class="feature"><div class="icon">👥</div><h3>Active community</h3><p>Join modders and developers sharing updates, mods, and tips daily.</p></div>
+      <div class="feature"><div class="icon">🚀</div><h3>Fast updates</h3><p>Our tools stay current with regular releases and fixes.</p></div>
+    </div>
+  </section>
+
+  <section class="breeze-section" id="breeze">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="breeze-tag">Subsection</div>
+        <div class="breeze-head"><img src="breezelogo.png" alt="" /><h2>Breeze</h2></div>
+        <p>A minimal, modern mod menu built by our team — instant toggles, clean UI, ready to use.</p>
+      </div>
+      <div class="stats-summary" id="statSummary">
+        <div class="stat"><div class="num">–</div><div class="lbl">Files</div></div>
+        <div class="stat"><div class="num">–</div><div class="lbl">Total lines</div></div>
+        <div class="stat"><div class="num">–</div><div class="lbl">Avg lines/file</div></div>
+      </div>
+      <div class="file-list" id="fileList"></div>
     </div>
   </section>
 
   <footer>
-    © 2026 Breeze. All rights reserved.
+    © 2026 Ty's Modding Server. All rights reserved.
   </footer>
 
   <script>
-    const STATS_URL = 'https://raw.githubusercontent.com/tyy-8/breeze/main/filecounts.json';
+    const STATS_URL = 'https://raw.githubusercontent.com/tysuks/tysuks.github.io/main/filecounts.json';
 
     fetch(STATS_URL)
       .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
@@ -133,11 +140,12 @@
       .catch(loadFromDisk);
 
     function loadStats(data) {
-      const entries = Object.entries(data).sort((a, b) => b[1] - a[1]);
+      const entries = Object.entries(data).sort((a, b) => b[1] - a[1])
+        .map(([name, lines]) => ['Breeze.' + name, lines]);
       const totalLines = entries.reduce((s, [,n]) => s + n, 0);
 
       document.getElementById('statSummary').innerHTML = `
-        <div class="stat"><div class="num">${data.length ?? entries.length}</div><div class="lbl">Files</div></div>
+        <div class="stat"><div class="num">${entries.length}</div><div class="lbl">Files</div></div>
         <div class="stat"><div class="num">${totalLines.toLocaleString()}</div><div class="lbl">Total lines</div></div>
         <div class="stat"><div class="num">${Math.round(totalLines / entries.length).toLocaleString()}</div><div class="lbl">Avg lines/file</div></div>
       `;
@@ -152,9 +160,8 @@
 
     function loadFromDisk() {
       const els = document.querySelectorAll('.stat .num');
-      if (els[0]) els[0].textContent = '22';
-      if (els[1]) els[1].textContent = '5,622';
-      if (els[2]) els[2].textContent = '1,689';
+      const fallback = [22, '5,622', '256'];
+      els.forEach((el, i) => el.textContent = fallback[i]);
     }
   </script>
 </body>
